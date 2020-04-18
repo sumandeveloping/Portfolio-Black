@@ -92,7 +92,7 @@
           <h2 class="secondary-heading font-thin100">
             I'm <span class="letter-pink">Suman</span>&nbsp;Tapader
           </h2>
-          <p class="mt-5 font-thin100">
+          <p class="mt-5 font-thin100" id="about-text">
             I am a full stack web developer who is pursuing his dreams as a
             freelancer. Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Saepe, suscipit! Incidunt eum dolorum at obcaecati culpa accusantium
@@ -100,8 +100,12 @@
           </p>
 
           <div class="hero__buttons mt-9">
-            <a href="" class="btn btn-md btn-primary">Projects</a>
-            <a href="" class="btn btn-md btn-outline ml-3">Contact Me</a>
+            <a href="" class="btn btn-md btn-primary" id="projects-btn"
+              >Projects</a
+            >
+            <a href="" class="btn btn-md btn-outline ml-3" id="contact-btn"
+              >Contact Me</a
+            >
           </div>
         </div>
         <div class="hero__imgContainer">
@@ -225,10 +229,10 @@
           recent projects
         </h1>
         <div class="projects mt-7">
-          <div class="projects__img order-1">
+          <div class="projects__img order-1" id="natour-img">
             <img src="images/natour.gif" alt="Natour Project Image" />
           </div>
-          <div class="projects__content order-2">
+          <div class="projects__content order-2" id="natour-info">
             <h1 class="projects__title">
               <span class="letter-pink">Natour</span>&nbsp;Project
             </h1>
@@ -250,7 +254,7 @@
           </div>
 
           <!-- ? -->
-          <div class="projects__content order-3">
+          <div class="projects__content order-3" id="forkify-info">
             <h1 class="projects__title">
               <span class="letter-pink">Foodle</span>&nbsp;Project
             </h1>
@@ -270,7 +274,7 @@
             </p>
             <a href="" class="btn btn-sm btn-primary mt-4">View Project</a>
           </div>
-          <div class="projects__img order-4">
+          <div class="projects__img order-4" id="forkify-img">
             <img src="images/forkifyCrop.gif" alt="Natour Project Image" />
           </div>
         </div>
@@ -290,7 +294,7 @@
         </p>
         <div class="projects-gallery">
           <!-- * component -->
-          <div class="gallery">
+          <div class="gallery" id="gallery1">
             <div class="gallery__side gallery__side--front">
               <div class="gallery__img gallery__img--portfolio"></div>
             </div>
@@ -316,7 +320,7 @@
               </div>
             </div>
           </div>
-          <div class="gallery">
+          <div class="gallery" id="gallery2">
             <div class="gallery__side gallery__side--front">
               <div class="gallery__img gallery__img--social"></div>
             </div>
@@ -342,7 +346,7 @@
               </div>
             </div>
           </div>
-          <div class="gallery">
+          <div class="gallery" id="gallery3">
             <div class="gallery__side gallery__side--front">
               <div class="gallery__img gallery__img--ecom"></div>
             </div>
@@ -373,7 +377,7 @@
               </div>
             </div>
           </div>
-          <div class="gallery">
+          <div class="gallery" id="gallery4">
             <div class="gallery__side gallery__side--front">
               <div class="gallery__img gallery__img--budget"></div>
             </div>
@@ -438,6 +442,35 @@
       </footer>
     </main>
 
+    <!-- SCROLLMAGIC CDN -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"
+      integrity="sha256-2p2tRZlPowp3P/04Pw2rqVCSbhyV/IB7ZEVUglrDS/c="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"
+      integrity="sha256-XBVALc3QsDSQiDtiaBwNZ2rxCJTHzlUhhlDQ84J8bw8="
+      crossorigin="anonymous"
+    ></script>
+    <!-- GSAP CDN -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script> -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"
+      integrity="sha256-+9YNuItWuR4sbqeaNiJOxG0BvptYz4fbUXbIZoH5Jwo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"
+      integrity="sha256-lPE3wjN2a7ABWHbGz7+MKBJaykyzqCbU96BJWjio86U="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"
+      integrity="sha256-fIkQKQryItPqpaWZbtwG25Jp2p5ujqo/NwJrfqAB+Qk="
+      crossorigin="anonymous"
+    ></script>
+
     <script>
       window.addEventListener("DOMContentLoaded", (e) => {
         // alert("hi");
@@ -449,5 +482,6 @@
         });
       });
     </script>
+    <script src="js/main.js"></script>
   </body>
 </html>
