@@ -1,0 +1,112 @@
+// SECTION skills
+.skills {
+  padding: 10rem 0 5rem 0;
+
+  @include respond(tab-land) {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
+  @include respond(tab-port) {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
+  &__desc {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    word-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+  }
+
+  .skillWrapper {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, minmax(20rem, auto));
+    column-gap: 4rem;
+    row-gap: 4rem;
+    padding: 8rem 0 0 0;
+
+    @include respond(tab-land) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    @include respond(tab-port) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(4, minmax(20rem, auto));
+    }
+    @include respond(phone) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(5, minmax(20rem, auto));
+    }
+  }
+}
+
+// SECTION projects
+.projects-section {
+  padding: 10rem 0 5rem 0;
+
+  @include respond(tab-land) {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
+  @include respond(tab-port) {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}
+
+// SECTION portfolio
+.portfolio-section {
+  padding: 10rem 0 10rem 0;
+
+  @include respond(tab-land) {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
+  @include respond(tab-port) {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
+  .portfolio__desc {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    word-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+  }
+
+  .projects-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(1, minmax(20rem, auto));
+    column-gap: 4rem;
+    row-gap: 4rem;
+    padding: 8rem 0 0 0;
+    // display: flex;
+    // flex-direction: row;
+    // flex-flow: row wrap;
+    // justify-content: space-between;
+    @include respond(tab-land) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media only screen and (max-width: 64em) {
+      // mac-width: 1024px
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include respond(tab-port) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include respond(phone) {
+      grid-template-columns: repeat(1, 1fr);
+      place-items: center;
+    }
+  }
+}

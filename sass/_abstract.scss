@@ -1,0 +1,48 @@
+/*
+Breakpoints arguments choices
+phone
+tab-port
+tab-land
+Big-desktop 
+*/
+
+//1em=16px   em/rem doesnt change from 16 px to anything in media query only
+@mixin respond($breakpoint) {
+  //For phone(0-600)
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 37.5em) {
+      //37.5em == 600px
+      @content;
+    }
+  }
+
+  //For tablet potrait(600-900)
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: 56.25em) {
+      //56.25me == 900px
+      @content;
+    }
+  }
+
+  //For tablet landscape(900-1200)
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 75em) {
+      //75em == 1200px
+      @content;
+    }
+  }
+  @if $breakpoint == desktop {
+    @media only screen and (max-width: 112.5em) {
+      //112.5em == 1800px
+      @content;
+    }
+  }
+
+  //For big desktop ( > 1800)
+  @if $breakpoint == big-desktop {
+    @media only screen and (min-width: 112.5em) {
+      //112.5em == 1800px
+      @content;
+    }
+  }
+}

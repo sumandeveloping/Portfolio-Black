@@ -1,0 +1,201 @@
+.gallery {
+  // width: 30rem;
+  height: 30rem;
+  //   margin-bottom: 3rem;
+  //   margin-left: 1rem;
+  //   margin-right: 1rem;
+  position: relative;
+  perspective: 200rem;
+  cursor: pointer;
+
+  @include respond(phone) {
+    // width: 100%;
+    height: 50rem;
+  }
+
+  @media only screen and (max-width: 64em) {
+    height: auto;
+    // width: 100%;
+  }
+
+  //rotation
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    -o-transform: rotateY(-180deg);
+
+    @media only screen and (max-width: 64em) {
+      transform: rotateY(0deg);
+      -webkit-transform: rotateY(0deg);
+      -moz-transform: rotateY(0deg);
+      -ms-transform: rotateY(0deg);
+      -o-transform: rotateY(0deg);
+    }
+  }
+  &:hover &__side--back {
+    transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+
+    @media only screen and (max-width: 64em) {
+      transform: rotateY(0deg);
+      -webkit-transform: rotateY(0deg);
+      -moz-transform: rotateY(0deg);
+      -ms-transform: rotateY(0deg);
+      -o-transform: rotateY(0deg);
+    }
+  }
+
+  &__side {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    box-shadow: $box-shadow-light;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transition: transform 0.4s linear;
+    -webkit-transition: transform 0.4s linear;
+    -moz-transition: transform 0.4s linear;
+    -ms-transition: transform 0.4s linear;
+    -o-transition: transform 0.4s linear;
+
+    // ? remove hover effect for touch screen  64em = 1024px
+    @media only screen and (max-width: 64em) {
+      position: relative;
+    }
+
+    &--front {
+      z-index: 10;
+      background: orangered;
+
+      @media only screen and (max-width: 64em) {
+        height: 35rem;
+      }
+    }
+
+    &--back {
+      z-index: -1;
+      transform: rotateY(180deg);
+      -webkit-transform: rotateY(180deg);
+      -moz-transform: rotateY(180deg);
+      -ms-transform: rotateY(180deg);
+      -o-transform: rotateY(180deg);
+      background-color: $bg-main;
+
+      @media only screen and (max-width: 64em) {
+        position: relative;
+        transform: rotateY(0deg);
+        -webkit-transform: rotateY(0deg);
+        -moz-transform: rotateY(0deg);
+        -ms-transform: rotateY(0deg);
+        -o-transform: rotateY(0deg);
+        height: 30rem;
+      }
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-blend-mode: screen;
+    //IMPORTANTfilter: ;
+    // filter: grayscale(60%);
+    // -webkit-filter: grayscale(60%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &--portfolio {
+      background-image: linear-gradient(
+          to right bottom,
+          #b4146b,
+          $primary-textColor
+        ),
+        url(../images/portfolio.jpg);
+    }
+
+    &--social {
+      background-image: linear-gradient(
+          to right bottom,
+          #3953d5 50%,
+          $primary-textColor
+        ),
+        url(../images/social.jpg);
+    }
+
+    &--ecom {
+      background-image: linear-gradient(
+          to right bottom,
+          #0ea0e6 50%,
+          $primary-textColor
+        ),
+        url(../images/shop2.png);
+    }
+
+    &--budget {
+      background-image: linear-gradient(
+          to right bottom,
+          #8411bf 50%,
+          $primary-textColor
+        ),
+        url(../images/budget.jpeg);
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    justify-content: center;
+    height: 100%;
+    justify-content: space-between;
+    padding: 2rem 2rem 4rem 2rem;
+  }
+
+  &__title {
+    font-size: 3rem;
+
+    // font-family: "Shadows Into Light", cursive;
+  }
+
+  &__desc {
+    font-size: 1.3rem;
+    font-weight: 300;
+    margin-top: 1.4rem;
+    @media only screen and (max-width: 64em) {
+      font-size: 1.8rem;
+    }
+
+    span {
+      font-size: 1.2rem;
+      color: $primary-textColor;
+      font-weight: 600;
+      margin-top: 5px;
+      display: inline-block;
+      @media only screen and (max-width: 64em) {
+        font-size: 1.6rem;
+      }
+    }
+  }
+
+  &__buttons {
+    font-size: 0.8rem;
+    a {
+      @include respond(tab-land) {
+        font-size: 1.2rem;
+      }
+      @include respond(tab-port) {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}

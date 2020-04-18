@@ -1,0 +1,151 @@
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+.container__large {
+  max-width: 120rem;
+  margin: 0 auto;
+
+  @include respond(tab-land) {
+    max-width: 120rem;
+  }
+}
+.primary-heading {
+  font-size: 5rem;
+
+  @include respond(phone) {
+    font-size: 4rem;
+  }
+}
+.secondary-heading {
+  font-size: 4.5rem;
+  @include respond(phone) {
+    font-size: 3.5rem;
+  }
+}
+.letter-pink {
+  color: #eb3296;
+  font-family: "Shadows Into Light", cursive;
+  letter-spacing: 3px;
+}
+.letter-lightBlue {
+  color: $light-blue;
+}
+.font-thin100 {
+  font-weight: 100;
+}
+
+//MARGIN
+.mt-4 {
+  margin-top: 4rem;
+}
+.mt-5 {
+  margin-top: 5rem;
+}
+.mt-7 {
+  margin-top: 7rem;
+}
+.mt-9 {
+  margin-top: 9rem;
+}
+.ml-3 {
+  margin-left: 3rem;
+}
+.mr-2 {
+  margin-right: 2rem;
+}
+.ml-2 {
+  margin-left: 2rem;
+}
+
+//ICON COLOR
+.html {
+  color: orangered;
+}
+.css {
+  color: #2992ee;
+}
+.js {
+  color: yellow;
+}
+.php {
+  color: #9c44f9;
+}
+.laravel {
+  color: #fc2158;
+}
+.wordpress {
+  color: #1f91be;
+}
+.bootstrap {
+  color: #563d7c;
+}
+.react {
+  color: #61dafb;
+}
+.node {
+  color: #43853d;
+}
+.npm {
+  color: #c12127;
+}
+
+//ICON
+.smile-icon {
+  width: 4rem;
+  display: inline-block;
+  position: relative;
+  top: 7px;
+  left: 5px;
+}
+
+//FLEX ORDER
+.order-1 {
+  order: 1;
+}
+.order-2 {
+  order: 2;
+}
+.order-3 {
+  order: 3;
+  @include respond(tab-port) {
+    order: 4;
+  }
+}
+.order-4 {
+  order: 4;
+  @include respond(tab-port) {
+    order: 3;
+  }
+}
+
+//section header
+.section-heading {
+  position: relative;
+  font-size: 4rem;
+  padding: 0 0 0 3rem;
+  font-weight: 300;
+  line-height: 1.7;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  //   font-family: "Dancing Script", cursive;
+  //   font-family: "Caveat", cursive;
+  //   font-family: "Poiret One", cursive;
+  font-family: "Shadows Into Light", cursive;
+  //   font-family: "Open Sans", sans-serif;
+
+  @include respond(phone) {
+    font-size: 2.5rem;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 3px;
+    height: 100%;
+    background-color: $primary-textColor;
+    left: 0;
+    top: 0;
+  }
+}
