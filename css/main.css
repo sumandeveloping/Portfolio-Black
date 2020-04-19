@@ -5,6 +5,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
 /*
 Breakpoints arguments choices
 phone
@@ -110,13 +113,20 @@ a {
 }
 
 .header .hamburger {
-  width: 3.5rem;
+  width: 3rem;
   height: 3rem;
   position: absolute;
   left: 5rem;
   top: 9rem;
   cursor: pointer;
   position: relative;
+  display: none;
+}
+
+@media only screen and (max-width: 56.25em) {
+  .header .hamburger {
+    display: block;
+  }
 }
 
 .header .hamburger:hover span::before {
@@ -975,18 +985,7 @@ a {
 }
 
 .skillBox {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  overflow: hidden;
   border: 1px solid rgba(184, 194, 247, 0.15);
   -webkit-box-shadow: 0 1rem 2rem -0.5rem rgba(255, 255, 255, 0.1);
           box-shadow: 0 1rem 2rem -0.5rem rgba(255, 255, 255, 0.1);
@@ -999,27 +998,38 @@ a {
   -moz-transition: transform 0.2s ease-in-out;
   -ms-transition: transform 0.2s ease-in-out;
   -o-transition: transform 0.2s ease-in-out;
+  position: relative;
+  text-align: center;
 }
 
-.skillBox:hover {
-  transform: translateY(-1.5rem) scale(1.1);
-  -webkit-transform: translateY(-1.5rem) scale(1.1);
-  -moz-transform: translateY(-1.5rem) scale(1.1);
-  -ms-transform: translateY(-1.5rem) scale(1.1);
-  -o-transform: translateY(-1.5rem) scale(1.1);
+.skillBox:hover .skillBox__title {
+  opacity: 1;
+  transform: translateY(0);
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
 }
 
 .skillBox__title {
   text-transform: uppercase;
-  font-size: 3em;
-  font-weight: 300;
-  font-family: "Caveat", cursive;
+  font-size: 2.5rem;
+  font-weight: 100;
+  opacity: 0;
+  font-family: "Poiret One", cursive;
   padding: 5px;
-  color: transparent;
-  -webkit-text-fill-color: #b8c2f7;
-  /* Will override color (regardless of order) */
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #b4146b;
+  color: #b8c2f7;
+  /*Willoverridecolor(regardlessoforder)*/
+  transition: all 0.5 ease-in-out;
+  -webkit-transition: all 0.5 ease-in-out;
+  -moz-transition: all 0.5 ease-in-out;
+  -ms-transition: all 0.5 ease-in-out;
+  -o-transition: all 0.5 ease-in-out;
+  transform: translateY(-4rem);
+  -webkit-transform: translateY(-4rem);
+  -moz-transform: translateY(-4rem);
+  -ms-transform: translateY(-4rem);
+  -o-transform: translateY(-4rem);
 }
 
 @media only screen and (max-width: 37.5em) {
@@ -1030,10 +1040,12 @@ a {
 
 .skillBox__icon {
   font-size: 6rem;
+  margin: 1rem 0;
 }
 
 .skillBox__status {
   font-size: 1.4rem;
+  margin: 2rem 0 0 0;
 }
 
 .skillBox__status i {
@@ -1289,6 +1301,56 @@ a {
 
 .npm {
   color: #c12127;
+}
+
+#html {
+  -webkit-box-shadow: 0px 5px 30px -15px rgba(255, 69, 0, 0.8);
+          box-shadow: 0px 5px 30px -15px rgba(255, 69, 0, 0.8);
+}
+
+#css {
+  -webkit-box-shadow: 0px 5px 30px -15px rgba(40, 142, 231, 0.8);
+          box-shadow: 0px 5px 30px -15px rgba(40, 142, 231, 0.8);
+}
+
+#js {
+  -webkit-box-shadow: 0px 5px 30px -15px rgba(255, 255, 0, 0.8);
+          box-shadow: 0px 5px 30px -15px rgba(255, 255, 0, 0.8);
+}
+
+#php {
+  -webkit-box-shadow: 0px 5px 30px -15px rgba(156, 68, 249, 0.8);
+          box-shadow: 0px 5px 30px -15px rgba(156, 68, 249, 0.8);
+}
+
+#laravel {
+  -webkit-box-shadow: 0px 5px 30px -15px rgba(252, 33, 88, 0.8);
+          box-shadow: 0px 5px 30px -15px rgba(252, 33, 88, 0.8);
+}
+
+#wordpress {
+  -webkit-box-shadow: 0px 5px 30px -15px rgba(31, 145, 190, 0.8);
+          box-shadow: 0px 5px 30px -15px rgba(31, 145, 190, 0.8);
+}
+
+#bootstrap {
+  -webkit-box-shadow: 0px 5px 30px -15px rgba(86, 61, 124, 0.9);
+          box-shadow: 0px 5px 30px -15px rgba(86, 61, 124, 0.9);
+}
+
+#react {
+  -webkit-box-shadow: 0px 5px 30px -15px rgba(97, 218, 251, 0.8);
+          box-shadow: 0px 5px 30px -15px rgba(97, 218, 251, 0.8);
+}
+
+#node {
+  -webkit-box-shadow: 0px 5px 30px -15px rgba(67, 133, 61, 0.95);
+          box-shadow: 0px 5px 30px -15px rgba(67, 133, 61, 0.95);
+}
+
+#npm {
+  -webkit-box-shadow: 0px 5px 30px -15px rgba(193, 33, 39, 0.8);
+          box-shadow: 0px 5px 30px -15px rgba(193, 33, 39, 0.8);
 }
 
 .smile-icon {

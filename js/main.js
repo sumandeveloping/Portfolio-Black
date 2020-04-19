@@ -119,12 +119,17 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
   // * portfolio section animation
   const timeline3 = new TimelineMax();
-  const tween7 = TweenMax.from(".portfolio-section", 1, { opacity: 0, y: 70 });
-  const tween8 = TweenMax.from("#gallery1", 1, {
-    opacity: 0,
-    x: -70,
-    ease: Power1.easeOut,
-  });
+  const tween7 = TweenMax.from(".portfolio__desc", 2, { opacity: 0, y: -120 });
+  const tween8 = TweenMax.from(
+    "#gallery1",
+    1,
+    {
+      opacity: 0,
+      x: -70,
+      ease: Power1.easeOut,
+    },
+    "-=0.5"
+  );
   const tween9 = TweenMax.from(
     "#gallery2",
     1,
@@ -143,7 +148,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
       y: 70,
       ease: Power1.easeOut,
     },
-    "-=0.8"
+    "-=2"
   );
   const tween11 = TweenMax.from(
     "#gallery4",
@@ -153,11 +158,11 @@ document.addEventListener("DOMContentLoaded", (e) => {
       x: 70,
       ease: Back.easeOut,
     },
-    "-=1"
+    "-=5"
   );
   timeline3.add(tween7).add(tween8).add(tween9).add(tween10).add(tween11);
   const scene3 = new ScrollMagic.Scene({
-    duration: 1200,
+    duration: 1000,
     triggerElement: ".portfolio-section",
     triggerHook: 0.9,
   })
