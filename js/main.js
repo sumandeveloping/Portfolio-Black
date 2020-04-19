@@ -75,7 +75,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
     triggerHook: 0.8,
   })
     .setTween(tween1)
-    .addIndicators({ name: "SCENE", colorEnd: "#FFFFFF" })
     .addTo(controller);
 
   /**
@@ -116,7 +115,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
     triggerHook: 0.9,
   })
     .setTween(timeline2)
-    .addIndicators({ name: "SCENE", colorEnd: "#FFFFFF" })
     .addTo(controller);
 
   // * portfolio section animation
@@ -164,6 +162,5 @@ document.addEventListener("DOMContentLoaded", (e) => {
     triggerHook: 0.9,
   })
     .setTween(timeline3)
-    .addIndicators({ name: "SCENE", colorEnd: "#FFFFFF" })
     .addTo(controller);
 });
