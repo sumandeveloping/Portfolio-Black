@@ -60,12 +60,18 @@ document.addEventListener("DOMContentLoaded", (e) => {
   // * SCROLLMAGIC
   const timelineScene1 = new TimelineMax();
   const tween1 = TweenMax.fromTo(
-    ".skills",
+    "#skills-heading",
     1,
-    { y: 50, opacity: 0 },
+    { y: -150, opacity: 0 },
     { y: 0, opacity: 1 }
   );
-  timelineScene1.add(tween1);
+  const tweenSkillsDesc = TweenMax.from(
+    ".skills__desc",
+    1,
+    { x: 70, opacity: 0 },
+    { x: 0, opacity: 1 }
+  );
+  timelineScene1.add([tween1, tweenSkillsDesc]);
   // basic initialization
   const controller = new ScrollMagic.Controller();
   //Creating a Scene
@@ -74,7 +80,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
     triggerElement: ".skills",
     triggerHook: 0.8,
   })
-    .setTween(tween1)
+    .setTween(timelineScene1)
     .addTo(controller);
 
   /**
@@ -82,7 +88,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
    */
   // * project section animation
   const timeline2 = new TimelineMax();
-  const tween2 = TweenMax.from(".projects-section", 1, { opacity: 0, y: 70 });
+  const tween2 = TweenMax.from("#projects-heading", 1, { opacity: 0, y: -120 });
   const tween3 = TweenMax.from("#natour-img", 1, {
     opacity: 0,
     x: -70,
@@ -112,14 +118,21 @@ document.addEventListener("DOMContentLoaded", (e) => {
   const scene2 = new ScrollMagic.Scene({
     duration: 1200,
     triggerElement: ".projects-section",
-    triggerHook: 0.9,
+    triggerHook: 0.7,
   })
     .setTween(timeline2)
     .addTo(controller);
 
   // * portfolio section animation
   const timeline3 = new TimelineMax();
-  const tween7 = TweenMax.from(".portfolio__desc", 2, { opacity: 0, y: -120 });
+  const tweenPortfolioHeading = TweenMax.from("#portfolio-heading", 2, {
+    opacity: 0,
+    y: -120,
+  });
+  const tween7 = TweenMax.from(".portfolio__desc", 2, {
+    opacity: 0,
+    x: -100,
+  });
   const tween8 = TweenMax.from(
     "#gallery1",
     1,
@@ -160,7 +173,16 @@ document.addEventListener("DOMContentLoaded", (e) => {
     },
     "-=5"
   );
-  timeline3.add(tween7).add(tween8).add(tween9).add(tween10).add(tween11);
+  // timeline3.add(tween7).add(tween8).add(tween9).add(tween10).add(tween11);
+  timeline3.add([
+    tweenPortfolioHeading,
+    tween7,
+    tween8,
+    tween9,
+    tween10,
+    tween11,
+  ]);
+
   const scene3 = new ScrollMagic.Scene({
     duration: 1000,
     triggerElement: ".portfolio-section",
